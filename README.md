@@ -856,7 +856,8 @@ $$
 
 This is expected for a register-oriented design.
 
----
+```
+```text
 
 ## 25. Area Analysis
 
@@ -880,7 +881,7 @@ $$
 The value is retained in the Genus library/tool area units reported by the tool.
 
 No unsupported conversion to `µm²` is made.
-
+```
 ---
 
 ## 26. Area Contribution
@@ -896,7 +897,7 @@ SYNC_REG
 Cells = 12
 Area  = 345.946
 ```
-
+```text
 Total:
 
 $$
@@ -926,9 +927,9 @@ $$
 of total reported area.
 
 These percentages are calculated from the supplied Genus area values.
-
+```
 ---
-
+```text
 ## 27. Power Analysis
 
 The supplied Genus power report gives:
@@ -940,7 +941,7 @@ PDB Frame: /stim#0/frame#0
 ```
 
 ### Total Power
-
+```text
 $$
 P_{total}=9.30184\times10^{-5}W
 $$
@@ -951,7 +952,7 @@ $$
 \boxed{P_{total}=93.0184\ \mu W}
 $$
 
----
+```
 
 ## 28. Power Breakdown
 
