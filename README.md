@@ -847,7 +847,7 @@ The supplied report gives:
 | **Total**      |    **20** | **705.197** | **100%** |
 
 ### Important Observation
-
+```text
 Sequential cells dominate the area:
 
 $$
