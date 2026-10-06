@@ -1,0 +1,63 @@
+ncsim> 
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm day8_tb.clk day8_tb.d day8_tb.en day8_tb.q_async day8_tb.q_sync day8_tb.reset_async day8_tb.reset_sync
+Created probe 1
+ncsim> run
+TIME=0 CLK=0 SYNC_RST=0 ASYNC_RST=0 EN=0 D=0000 Q_SYNC=xxxx Q_ASYNC=xxxx
+TIME=2 CLK=0 SYNC_RST=1 ASYNC_RST=1 EN=0 D=0000 Q_SYNC=xxxx Q_ASYNC=0000
+TIME=5 CLK=1 SYNC_RST=0 ASYNC_RST=0 EN=1 D=1010 Q_SYNC=1010 Q_ASYNC=1010
+TIME=10 CLK=0 SYNC_RST=0 ASYNC_RST=0 EN=1 D=1010 Q_SYNC=1010 Q_ASYNC=1010
+--------------------------------------
+LOAD TEST
+D      = 1010
+Q_SYNC = 1010
+Q_ASYNC= 1010
+--------------------------------------
+TIME=15 CLK=1 SYNC_RST=0 ASYNC_RST=0 EN=0 D=0101 Q_SYNC=1010 Q_ASYNC=1010
+TIME=20 CLK=0 SYNC_RST=0 ASYNC_RST=0 EN=0 D=0101 Q_SYNC=1010 Q_ASYNC=1010
+--------------------------------------
+HOLD TEST
+D      = 0101
+Q_SYNC = 1010
+Q_ASYNC= 1010
+--------------------------------------
+TIME=25 CLK=1 SYNC_RST=0 ASYNC_RST=0 EN=1 D=1100 Q_SYNC=1100 Q_ASYNC=1100
+TIME=30 CLK=0 SYNC_RST=0 ASYNC_RST=0 EN=1 D=1100 Q_SYNC=1100 Q_ASYNC=1100
+--------------------------------------
+SECOND LOAD TEST
+D      = 1100
+Q_SYNC = 1100
+Q_ASYNC= 1100
+--------------------------------------
+TIME=35 CLK=1 SYNC_RST=0 ASYNC_RST=0 EN=0 D=1100 Q_SYNC=1100 Q_ASYNC=1100
+======================================
+ASYNC RESET TEST
+======================================
+TIME=37 CLK=1 SYNC_RST=0 ASYNC_RST=1 EN=0 D=1100 Q_SYNC=1100 Q_ASYNC=0000
+Reset asserted WITHOUT clock edge
+TIME     = 38
+Q_ASYNC  = 0000
+TIME=38 CLK=1 SYNC_RST=0 ASYNC_RST=0 EN=1 D=0110 Q_SYNC=1100 Q_ASYNC=0000
+TIME=40 CLK=0 SYNC_RST=0 ASYNC_RST=0 EN=1 D=0110 Q_SYNC=1100 Q_ASYNC=0000
+TIME=45 CLK=1 SYNC_RST=0 ASYNC_RST=0 EN=1 D=0110 Q_SYNC=0110 Q_ASYNC=0110
+TIME=48 CLK=1 SYNC_RST=1 ASYNC_RST=0 EN=0 D=0110 Q_SYNC=0110 Q_ASYNC=0110
+======================================
+SYNC RESET TEST
+======================================
+Before clock edge:
+TIME     = 50
+Q_SYNC   = 0110
+TIME=50 CLK=0 SYNC_RST=1 ASYNC_RST=0 EN=0 D=0110 Q_SYNC=0110 Q_ASYNC=0110
+After clock edge:
+TIME     = 53
+Q_SYNC   = 0110
+TIME=53 CLK=0 SYNC_RST=0 ASYNC_RST=0 EN=0 D=0110 Q_SYNC=0110 Q_ASYNC=0110
+TIME=55 CLK=1 SYNC_RST=0 ASYNC_RST=0 EN=0 D=0110 Q_SYNC=0110 Q_ASYNC=0110
+TIME=60 CLK=0 SYNC_RST=0 ASYNC_RST=0 EN=0 D=0110 Q_SYNC=0110 Q_ASYNC=0110
+======================================
+DAY 8 TEST COMPLETE
+======================================
+Simulation complete via $finish(1) at time 63 NS + 0
+./day8_tb.v:222         $finish;
+ncsim> 
